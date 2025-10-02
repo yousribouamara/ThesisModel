@@ -8,7 +8,7 @@ A minimal, modular ODE model of breast-cancer–macrophage interactions calibrat
 ## Quick start
 
 ```bash
-# (optional) python -m venv .venv && source .venv/bin/activate
+# python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
@@ -20,12 +20,12 @@ Figures land in `results/figures/`:
 
 ## Local data paths
 
-Edit `config.py` if your data live elsewhere. By default, it tries your paths:
+
 
 - /Users/yousribouamara/Downloads/ThesisData/DataPe/Pe_Proliferation.csv
 - /Users/yousribouamara/Downloads/ThesisData/DataQian/Fig*.csv
 
-and falls back to the bundled copies in `data/`.
+.
 
 ## Structure
 
