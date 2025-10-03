@@ -1,5 +1,6 @@
 
 # model/equations.py — defines ODE right-hand-sides and helpers
+# overview on ppt
 import numpy as np
 
 def rhs_proliferation(t, C, params, S_M1=0.0, S_M2=0.0):

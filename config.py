@@ -2,7 +2,9 @@
 # config.py — centralizes data paths (local machine first, then bundled /data fallback)
 import os
 
-# User-local default paths (edit these to match your machine)
+# Default paths (edit these to match path for Claire, you can download these files from onedrive
+# under
+# https://kuleuven-my.sharepoint.com/personal/yousri_bouamara_student_kuleuven_be/Documents/Thesis%20Yousri%20'24-'25/Computational%20model/DataQian)
 USER_DATA_DIR_PE = "/Users/yousribouamara/Downloads/ThesisData/DataPe"
 USER_DATA_DIR_QIAN = "/Users/yousribouamara/Downloads/ThesisData/DataQian"
 

@@ -11,7 +11,7 @@ from fit.utils import wls_loss, sem_to_weight
 # Data loader
 def load_pe(csv_path):
     df = pd.read_csv(csv_path)
-    # 👇 Accept either "Time" or "Time_h"
+    # Accept either "Time" or "Time_h"
     if "Time_h" not in df.columns and "Time" in df.columns:
         df = df.rename(columns={"Time": "Time_h"})
     # If SEM is split as SEM+ / SEM-, collapse to one SEM

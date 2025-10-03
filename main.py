@@ -1,5 +1,6 @@
 
 # main.py — end-to-end: run Pe & Qian fits, then a coupled demo plot
+# change this to have the real proliferation not just a flat 1 line
 import os, json
 import numpy as np
 import matplotlib.pyplot as plt
