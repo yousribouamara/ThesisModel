@@ -1,35 +1,30 @@
+# Macrophage–Tumor Interaction Model (new, bone-aware)
 
-# ThesisModel
+**What this does (short):**  
+Rebuild of my model after discussing scope with Claire. It keeps things minimal but biologically correct:
+- CCL2/CCR2 **recruitment** (Qian),
+- TNBC cytokine-driven **drift** to TAM/M2 (Pe),
+- myeloid-VEGF **angiogenesis** (Qian),
+- **bone awareness** via θ_OC (fraction of monocytes that don’t become macrophages).
 
-A minimal, modular ODE model of breast-cancer–macrophage interactions calibrated to:
-- **Pe et al. 2022** (PLOS ONE): MDA-MB-231 proliferation with TAM/M2 (WST at 24/48/72 h)
-- **Qian et al. 2011** (Nature): CCL2-driven monocyte recruitment and anti-CCL2 blockade
+**States:**  
+C(t): tumor burden (MDA-MB-231)  
+A_M2(t): pro-tumor macrophage activity (TAM/M2)  
+V(t): angiogenic drive
 
-## Quick start
+**Equations:**  
+- dC/dt = r·C·(1 − C/K)·(1 + α_V·V) + α_M2·A_M2·C  
+- dA_M2/dt = k_drift·S_cyt + k_I·g(C)·σ_CCL2·(1−θ_OC) − d_M2·A_M2  
+- dV/dt = s_V·A_M2 − d_V·V  
+  with g(C) = C/(C + K_g) and S_cyt = S_scale·(w_IL6·IL6 + w_IL10·IL10 + w_TNF·TNF).
 
+**Data anchors:**  
+- Pe Fig 3B → α_M2 from 72h Δr/day (TAM vs control)  
+- Pe Fig 2D → IL-6/IL-10/TNF levels for drift  
+- Qian Fig 1 → σ_CCL2 (anti-CCL2/control recruitment ratio)  
+- Qian Fig 2–5 → κ_VEGF (KO/WT), used to sanity-check angiogenesis
+
+**Run:**  
 ```bash
-# python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python main.py
-```
-
-Figures land in `results/figures/`:
-- `pe_fit.png` — model vs Pe relative fold-changes
-- `qian_fit.png` — model vs Qian recruitment ratios
-- `coupled_demo.png` — illustrative proliferation scenarios
-
-## Local data paths
-
-
-
-- /Users/yousribouamara/Downloads/ThesisData/DataPe/Pe_Proliferation.csv
-- /Users/yousribouamara/Downloads/ThesisData/DataQian/Fig*.csv
-
-.
-
-## Structure
-
-- `model/equations.py` — ODE right-hand sides and simple integrators
-- `fit/fit_pe.py` — fits r0, gamma2, K2 (and scales) to Pe WST data
-- `fit/fit_qian.py` — fits alpha, K_L, dMo, eta (and cC,cM2,dL coarse) to Qian ratios
-- `main.py` — runs both fits and produces an illustrative coupled plot
+python3 -m pip install -r requirements.txt
+python3 main.py

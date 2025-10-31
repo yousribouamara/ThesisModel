@@ -1,32 +1,35 @@
 
-# config.py — centralizes data paths (local machine first, then bundled /data fallback)
-import os
 
-# Default paths (edit these to match path for Claire, you can download these files from onedrive
-# under
-# https://kuleuven-my.sharepoint.com/personal/yousri_bouamara_student_kuleuven_be/Documents/Thesis%20Yousri%20'24-'25/Computational%20model/DataQian)
-USER_DATA_DIR_PE = "/Users/yousribouamara/Downloads/ThesisData/DataPe"
-USER_DATA_DIR_QIAN = "/Users/yousribouamara/Downloads/ThesisData/DataQian"
+"""
+# Macrophage–Tumor Interaction Model (Fresh Build)
 
-# Bundled fallback (inside the project)
-BUNDLED_DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+Author: Yousri Bouamara
+Minimal, clean, bone-aware model based on Pe et al. and Qian et al.
 
-def path_or_fallback(local_path, fallback_filename):
-    if local_path and os.path.exists(local_path):
-        return local_path
-    fb = os.path.join(BUNDLED_DATA_DIR, fallback_filename)
-    if os.path.exists(fb):
-        return fb
-    raise FileNotFoundError(f"Neither local path '{local_path}' nor bundled data '{fallback_filename}' found.")
+**Equations**
 
-def get_pe_path():
-    local = os.path.join(USER_DATA_DIR_PE, "Pe_Proliferation.csv")
-    return path_or_fallback(local, "Pe_Proliferation.csv")
+- dC/dt = r·C·(1 − C/K)·(1 + α_V·V) + α_M2·A_M2·C
+- dA_M2/dt = k_drift·S_cyt + k_I·g(C)·σ_CCL2·(1 − θ_OC) − d_M2·A_M2
+- dV/dt = s_V·A_M2 − d_V·V
 
-def get_qian_paths():
-    files = ["FigB.csv","FigC.csv","FigD.csv","FigE.csv","FigF.csv"]
-    out = []
-    for fn in files:
-        local = os.path.join(USER_DATA_DIR_QIAN, fn)
-        out.append(path_or_fallback(local, fn))
-    return out
+
+Note for Claire:
+Central place for file paths. I pointed this at my local Mac folders.
+If I move the data, I’ll just update these strings.
+"""
+
+from pathlib import Path
+
+# Where my digitized CSVs live (Pe & Qian)
+DATA_PE   = Path("/Users/yousribouamara/Documents/Thesis/Data/DataPe")
+DATA_QIAN = Path("/Users/yousribouamara/Documents/Thesis/Data/DataQian")
+
+# Output folder for figures / summaries
+RESULTS = Path("results")
+RESULTS.mkdir(exist_ok=True, parents=True)
+
+
+
+
+
+
