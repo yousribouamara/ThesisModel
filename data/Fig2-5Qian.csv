@@ -1,0 +1,27 @@
+Figure,Condition,Mean,SEM,Unit,Model_Use,Source
+3A,Control_PBS,99.55,NA,Metastases_index,Recruitment baseline,Qian2011_Fig3A
+3A,CCL2_Block,37.95,NA,Metastases_index,CCL2 inhibition reduces recruitment,Qian2011_Fig3A
+3B,Control_Ab,0.136,0.017,Relative_burden,Host+Tumor CCL2 normal condition,Qian2011_Fig3B
+3B,Anti_huCCL2_Ab,0.0369,0.012,Relative_burden,Human CCL2 neutralized,Qian2011_Fig3B
+3B,Anti_muCCL2_Ab,0.0139,0.006,Relative_burden,Mouse CCL2 neutralized,Qian2011_Fig3B
+3D,Resident_Mono,13.57,0.71,%,RM recruitment,Qian2011_Fig3D
+3D,Inflammatory_Mono,32.32,1.43,%,IM recruitment,Qian2011_Fig3D
+3E,Control_Ab,100,14.47,%,Transmigration index (4173 cells + IMs),Baseline
+3E,Anti_huCCL2_Ab,44.08,5.26,%,Human CCL2 blockade,Qian2011_Fig3E
+3E,Anti_muCCL2_Ab,17.76,3.95,%,Mouse CCL2 blockade,Qian2011_Fig3E
+3F,Control_PBS,91.14,NA,%,Metastasis burden at day 22,Baseline
+3F,CCL2_Block,6.96,NA,%,Post-injection CCL2 block,Qian2011_Fig3F
+4B,No_BMM,8.6,0.60,Transendothelial_cells/field,Baseline permeability,Qian2011_Fig4B
+4B,VEGFfl_BMM,32.2,4.80,Transendothelial_cells/field,WT macrophages promote migration,Qian2011_Fig4B
+4B,VEGF_KO_BMM,11.2,0.20,Transendothelial_cells/field,Loss of VEGF abolishes effect,Qian2011_Fig4B
+4C,No_BMM,1.02,0.235,Abs650nm,Endothelial permeability baseline,Qian2011_Fig4C
+4C,VEGFfl_BMM,5.843,0.275,Abs650nm,VEGF increases permeability,Qian2011_Fig4C
+4C,VEGF_KO_BMM,0.98,0.510,Abs650nm,VEGF KO restores baseline,Qian2011_Fig4C
+4D,Monocytes,15.28,5.56,Relative_VEGF_copy#,Myeloid VEGF expression,Qian2011_Fig4D
+4D,Tcells,120.83,33.33,Relative_VEGF_copy#,Control non-myeloid,Qian2011_Fig4D
+4D,Bcells,100,8.33,Relative_VEGF_copy#,Control non-myeloid,Qian2011_Fig4D
+4D,Granulocytes,108.33,19.44,Relative_VEGF_copy#,Control non-myeloid,Qian2011_Fig4D
+4E,Met1_only,0.0898,0.0086,Mets_index,WT VEGF,Qian2011_Fig4E
+4E,Met1_plus_IM,0.0139,0.0032,Mets_index,Myeloid VEGF KO,Qian2011_Fig4E
+4F,Met1_only,0.0146,0.0052,Mets_index,KO alone,Qian2011_Fig4F
+4F,Met1_plus_IM,0.0958,0.0127,Mets_index,Rescue by WT IMs,Qian2011_Fig4F

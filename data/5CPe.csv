@@ -1,0 +1,5 @@
+Cytokine,Q1_pgml,Q3_pgml,Median_pgml,IQR_pgml,Source
+IL4,0.71,1.07,0.89,0.36,Pe2022_Fig5C
+IL10,0.24,0.71,0.48,0.48,Pe2022_Fig5C
+TNFa,0.48,1.67,1.07,1.19,Pe2022_Fig5C
+IL6,141.67,1008.33,575,866.67,Pe2022_Fig5C

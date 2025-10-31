@@ -1,0 +1,7 @@
+Tissue,Condition,Mean,Error
+Blood,Normal,1.39,0.84
+Blood,Mets,1.49,0.34
+Lung,Normal,1.55,0.28
+Lung,Mets,6.41,1.41
+Spleen,Normal,2.94,0.84
+Spleen,Mets,2.54,1.16
