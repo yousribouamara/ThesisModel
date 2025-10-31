@@ -20,7 +20,8 @@ If I move the data, I’ll just update these strings.
 
 from pathlib import Path
 
-# Where my digitized CSVs live (Pe & Qian)
+# Where my digitized CSVs are (Pe & Qian)
+# For Claire: change these to where you save them '.../Downloads/DataPe'. I'll add a zip in mail
 DATA_PE   = Path("/Users/yousribouamara/Documents/Thesis/Data/DataPe")
 DATA_QIAN = Path("/Users/yousribouamara/Documents/Thesis/Data/DataQian")
 
